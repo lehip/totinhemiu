@@ -1,13 +1,19 @@
 // Trình phát nhạc
-const music = document.getElementById("bg-music");
+const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-btn');
+let isPlaying = false;
 
-function toggleMusic() {
-  if (music.paused) {
+musicBtn.addEventListener('click', () => {
+  if (!isPlaying) {
     music.play();
+    isPlaying = true;
+    musicBtn.textContent = '🔇 Tắt nhạc';
   } else {
     music.pause();
+    isPlaying = false;
+    musicBtn.textContent = '🔊 Bật nhạc';
   }
-}
+});
 
 // Hiẹu ứng hoa hồng bay
 
